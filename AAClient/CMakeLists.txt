@@ -27,7 +27,10 @@ add_executable(AAClient main.cpp
     src/InputChannelHandler.cpp
     ${PROTO_SRCS}
     ${PROTO_HDRS}
+    ${BACKWARD_ENABLE}
     )
+
+add_backward(AAClient)
 target_link_libraries(AAClient Threads::Threads)
 target_link_libraries(AAClient PkgConfig::libusb)
 target_link_libraries(AAClient PkgConfig::gst)
